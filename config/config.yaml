@@ -1,0 +1,17 @@
+private_network: '192.168.56.4' # IP for network
+ports:
+    ssh: '2200' # Port SSH to access virtual machine
+    http: '8080' # Port HTTP to access websites
+database:
+    pwd: 'root' # Password for MySQL root user
+
+# Config for your websites
+websites:
+    site_1:
+        name: 'name_1' # Name of website
+        sync_folder: 'C:/path/site_1' # Folder to sync with NFS
+        url: 'site_1.dev' # URL to access
+    site_2:
+        name: 'name_2'
+        sync_folder: 'C:/path/site_2'
+        url: 'site_2.dev'
