@@ -12,14 +12,16 @@ echo "***** Create vhost *****"
 cp /vagrant/config/vhost /etc/apache2/sites-available/$WEBSITE.conf
 sed -i "s/_URL_/$URL/g" /etc/apache2/sites-available/$WEBSITE.conf
 sed -i "s/_WEBSITE_/$WEBSITE/g" /etc/apache2/sites-available/$WEBSITE.conf
-a2ensite $PROJECT
+a2ensite $WEBSITE
 echo "$IP www.$URL $URL" >> /etc/hosts
 echo "***** Change rights *****"
 chmod 777 -R /var/cache
 chmod 777 -R /var/log
+mkdir /var/www/$WEBSITE/app/cache
 chmod 777 -R /var/www/$WEBSITE/app/cache
+mkdir /var/www/$WEBSITE/app/logs
 chmod 777 -R /var/www/$WEBSITE/app/logs
 echo "***** Create database *****"
-echo "CREATE DATABASE $PROJECT" | mysql -u root -p$ROOT_PWD
+echo "CREATE DATABASE $WEBSITE" | mysql -u root -p$ROOT_PWD
 echo "***** Restart service Apache2 *****"
 service apache2 restart

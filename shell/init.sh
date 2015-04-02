@@ -50,6 +50,9 @@ apt-get install -y mysql-server
 # ------------------
 echo "***** Install essential packages *****"
 apt-get install -y build-essential git-core vim curl
+echo "***** Install composer *****"
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/tmp --filename=composer
+cp /tmp/composer /usr/bin
 
 # Other config
 rm -f /etc/apache2/sites-available/000-default.conf

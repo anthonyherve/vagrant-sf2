@@ -14,7 +14,7 @@ Vagrant.configure(2) do |config|
     v.customize ["modifyvm", :id, "--memory", 1024]
     v.customize ["modifyvm", :id, "--cpus", 2]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    v.customize ["modifyvm", :id, "--name", "perso"]
+    v.customize ["modifyvm", :id, "--name", "#{CONF['vm_name']}"]
   end
 
   # Running bootstrap
