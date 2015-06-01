@@ -54,6 +54,10 @@ echo "***** Install composer *****"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/tmp --filename=composer
 cp /tmp/composer /usr/bin
 
+# Add ant
+echo "***** Install ant *****"
+apt-get install ant
+
 # Other config
 rm -f /etc/apache2/sites-available/000-default.conf
 unlink /etc/apache2/sites-enabled/000-default.conf
