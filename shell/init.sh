@@ -56,7 +56,7 @@ cp /tmp/composer /usr/bin
 
 # Add ant
 echo "***** Install ant *****"
-apt-get install ant
+apt-get install -y ant
 
 # Other config
 rm -f /etc/apache2/sites-available/000-default.conf
